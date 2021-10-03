@@ -25,5 +25,11 @@ public class BinaryRepresentation {
     _representation = String.valueOf(bits);
   }
 
+  public void setRepresentation(String data) {
+    if (data.length() == _representation.length()) {
+      _representation = data;
+    }
+  }
+
   public String getValue() { return this._representation; }
 }

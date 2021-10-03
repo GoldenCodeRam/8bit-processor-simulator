@@ -2,20 +2,50 @@
 <form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="com.uptc.simulator.forms.MainForm">
   <grid id="27dc6" binding="_mainPanel" layout-manager="GridBagLayout">
     <constraints>
-      <xy x="20" y="20" width="500" height="400"/>
+      <xy x="20" y="20" width="500" height="484"/>
     </constraints>
     <properties/>
     <border type="none" title=""/>
     <children>
+      <nested-form id="825a9" form-file="com/uptc/simulator/forms/ControlSignalForm.form">
+        <constraints>
+          <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+          <gridbag weightx="0.0" weighty="0.0"/>
+        </constraints>
+      </nested-form>
+      <nested-form id="2689" form-file="com/uptc/simulator/forms/RamForm.form">
+        <constraints>
+          <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+          <gridbag weightx="0.0" weighty="0.0"/>
+        </constraints>
+      </nested-form>
+      <nested-form id="832cd" form-file="com/uptc/simulator/forms/InstructionRegisterForm.form">
+        <constraints>
+          <grid row="4" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+          <gridbag weightx="0.0" weighty="0.0"/>
+        </constraints>
+      </nested-form>
+      <nested-form id="ccbc1" form-file="com/uptc/simulator/forms/ProgramCounterForm.form">
+        <constraints>
+          <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+          <gridbag weightx="0.0" weighty="0.0"/>
+        </constraints>
+      </nested-form>
       <nested-form id="ae1ab" form-file="com/uptc/simulator/forms/BusForm.form">
+        <constraints>
+          <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+          <gridbag weightx="0.0" weighty="0.0"/>
+        </constraints>
+      </nested-form>
+      <nested-form id="31a72" form-file="com/uptc/simulator/forms/ClockForm.form">
         <constraints>
           <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
           <gridbag weightx="0.0" weighty="0.0"/>
         </constraints>
       </nested-form>
-      <nested-form id="825a9" form-file="com/uptc/simulator/forms/ControlSignalForm.form">
+      <nested-form id="eb1c4" form-file="com/uptc/simulator/forms/MemoryAddressRegister.form">
         <constraints>
-          <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+          <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
           <gridbag weightx="0.0" weighty="0.0"/>
         </constraints>
       </nested-form>
