@@ -4,11 +4,14 @@ import javax.swing.*;
 import java.awt.*;
 
 public class ClockForm {
+    public ControlSignalForm controlSignalForm;
+
     private JPanel clockPanel;
     private JButton nextTickButton;
 
     private void createUIComponents() {
         nextTickButton = new JButton();
+        nextTickButton.addActionListener(actionEvent -> controlSignalForm.nextPulse());
     }
 
     {

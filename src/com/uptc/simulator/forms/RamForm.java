@@ -3,17 +3,35 @@ package com.uptc.simulator.forms;
 import com.uptc.simulator.forms.model.RamTable;
 
 import javax.swing.*;
+import javax.swing.table.TableModel;
 import java.awt.*;
 
 public class RamForm {
     private JPanel ramPanel;
     private JTable ramTable;
-    private ByteViewerForm currentAddressByteViewer;
+    private ByteViewerForm currentValueByteViewer;
+
+    public void setValueToAddress(String address) {
+        if (address.length() > 4) {
+            address = address.substring(4);
+        }
+
+        TableModel ramTableModel = ramTable.getModel();
+        for (int i = 0; i < ramTableModel.getRowCount(); i++) {
+            if (ramTableModel.getValueAt(i, 0).equals(address)) {
+                currentValueByteViewer.setByte((String) ramTableModel.getValueAt(i, 1));
+                return;
+            }
+        }
+    }
+
+    public String getValue() {
+        return currentValueByteViewer.getByte();
+    }
 
     private void createUIComponents() {
         ramTable = new RamTable();
-        currentAddressByteViewer = new ByteViewerForm();
-        currentAddressByteViewer.setActiveBits(4);
+        currentValueByteViewer = new ByteViewerForm();
     }
 
     {
@@ -49,24 +67,22 @@ public class RamForm {
         gbc.gridy = 1;
         gbc.fill = GridBagConstraints.BOTH;
         ramPanel.add(ramTable, gbc);
-        gbc = new GridBagConstraints();
-        gbc.gridx = 0;
-        gbc.gridy = 4;
-        ramPanel.add(currentAddressByteViewer.$$$getRootComponent$$$(), gbc);
-        final JLabel label2 = new JLabel();
-        label2.setHorizontalAlignment(0);
-        label2.setHorizontalTextPosition(0);
-        label2.setText("Current Address");
-        gbc = new GridBagConstraints();
-        gbc.gridx = 0;
-        gbc.gridy = 3;
-        ramPanel.add(label2, gbc);
         final JPanel spacer1 = new JPanel();
         gbc = new GridBagConstraints();
         gbc.gridx = 0;
         gbc.gridy = 2;
         gbc.fill = GridBagConstraints.VERTICAL;
         ramPanel.add(spacer1, gbc);
+        gbc = new GridBagConstraints();
+        gbc.gridx = 0;
+        gbc.gridy = 4;
+        ramPanel.add(currentValueByteViewer.$$$getRootComponent$$$(), gbc);
+        final JLabel label2 = new JLabel();
+        label2.setText("Value in Address");
+        gbc = new GridBagConstraints();
+        gbc.gridx = 0;
+        gbc.gridy = 3;
+        ramPanel.add(label2, gbc);
     }
 
     /**

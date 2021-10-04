@@ -7,6 +7,15 @@ public class InstructionRegisterForm {
     private JPanel instructionRegisterPanel;
     private ByteViewerForm instructionRegisterByteViewer;
 
+    public String getInstructionRegisterValue() {
+        // Only the last 4 bits
+        return "0000" + instructionRegisterByteViewer.getByte().substring(4);
+    }
+
+    public void setInstructionRegisterValue(String value) {
+        instructionRegisterByteViewer.setByte(value);
+    }
+
     private void createUIComponents() {
         instructionRegisterByteViewer = new ByteViewerForm();
     }
